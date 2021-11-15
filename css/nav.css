@@ -1,0 +1,223 @@
+* { box-sizing: border-box; }
+
+/* Mobile first approach */
+body {
+  min-width: 300px; 
+  margin: 0 auto; /* Center align once max-width is reached */
+  padding: 5px 10px; 
+  background-color: #efd; 
+  display: grid;
+  grid-template-areas:
+    'top    checkout'
+    'hero   hero'
+    'boxes  boxes'
+    'info   info'
+    'bottom bottom';
+}
+
+header { grid-area: top; background-color: #fed; }
+section#hero { grid-area: hero; background-color: #edf; }
+section#products { grid-area: boxes; background-color: #def; }
+section#info { grid-area: info; background-color: #fde; }
+footer { grid-area: bottom;   background-color: #fed; }
+
+header {
+  margin: 5px 0;
+  position: relative;
+}
+
+header img#logo {
+  height: 42px;
+}
+
+nav {
+    display: none; /* By default hide the menu */
+}
+
+#hamburger-menu     {
+    display: none; /* Hide checkbox */ 
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block; /* Display nav block when checkbox is checked only */ 
+}
+
+label[for=hamburger-menu] { 
+  font-size: 2em;
+  position: absolute; /* header is relative */
+  right: 0px;
+  top: 10px; 
+}
+
+.cart {
+    margin-left:auto;
+}
+
+/* Style the menu itself */ 
+header nav ul { 
+    list-style-type: none;
+    display: inline-block; 
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+}
+header nav ul li {     
+    margin-bottom: 2px; 
+}
+header nav ul li a { 
+    text-decoration: none; 
+    color: white; 
+    background: black;
+    padding: 5px 5px;
+    border: 1px solid black;
+    display: block; 
+    text-align: center;
+}
+header nav ul li:last-child {
+   margin-bottom: 0;
+}
+header nav ul li a:hover {
+    color: black; 
+    background: white;  
+}
+
+section#hero {
+  position: relative; 
+}
+
+section#hero img {
+  width: 100%;
+}
+
+section#hero > div.center { 
+  position: absolute; 
+  width: 240px; 
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  bottom: 48px;
+  left: 20px;
+}
+
+section#products {
+   display: flex; 
+   flex-direction: column;
+}
+
+section#products > * {
+   border: 1px dashed grey;
+   flex-grow: 1;
+   height: 200px;
+   margin: 0 0 10px 0;
+}
+
+section#info > h2 {
+  margin-top: 0;
+}
+
+footer {
+  margin: 10px 0;
+  padding: 10px 0; 
+  display: flex;
+  flex-wrap: wrap;
+}
+footer > * {
+  flex: 100%;
+  height: 50px; 
+  background-color: lightgray;
+  padding: 10px 0;
+}
+footer > :last-child {
+  background-color: white;
+}
+
+/* For mid sized screens */
+@media (min-width: 640px) {
+  body {
+      max-width: 900px; /* Demo-purposes only */
+  }
+  header img#logo {
+    height: 72px;
+  }
+  label[for="hamburger-menu"] {
+     display: none;
+  }
+  header nav {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 20px; 
+  }
+  header nav ul { 
+    list-style-type: none; /**/
+    display: inline-block; /**/
+    padding-left: 0;/**/
+  }
+  header nav li { 
+      float: left; /**/
+      margin-right: 10px; /**/
+      background-color: #000; /**/
+  }
+  header nav li a { 
+      text-decoration: none; /**/
+      width: 120px; /**/
+      display: inline-block; /**/
+      color: #fff; /**/
+      padding: 2px 5px; /**/
+      border: 1px solid black; /**/
+      text-align: center; /**/
+  }
+  header nav li:last-child {
+      margin-right: 0; /**/
+  }
+  header nav li a:hover { 
+      background-color: #fff; /**/
+      color: #000; /**/
+  }
+  
+  section#products {
+    flex-direction: row;
+  }
+  section#products > * {
+    margin: 0;
+    margin-right: 10px;
+  }
+  section#products > :last-child {
+    margin: 0; /* No margin for last child */
+  }
+  section#info {
+    max-width: 640px;
+  }
+  section#info > h2 {
+    margin-top: 6px;
+  }
+  footer > * {
+    flex: 50%;
+    padding: 10px 10px 10px 0;
+  }
+  footer > :last-child {
+    padding: 10px 0px 10px 10px;
+  }
+}
+
+/* For wider screens */
+@media (min-width: 1024px) {
+  body {
+    max-width: 1280px; 
+    grid-template-areas:
+      'top    top    top    top'
+      'hero   hero   hero   hero'
+      'info   boxes  boxes  boxes'
+      'bottom bottom bottom bottom';
+  }
+  section#hero {
+   margin-bottom: 10px;
+  }
+  section#info {
+   margin-right: 10px;
+  }
+  section#info > h2 {
+    margin-top: 0;
+  }
+  
+}
