@@ -127,6 +127,15 @@
   section#info > h2 {
     margin-top: 0;
   }
+
+  .ph2 {
+    color:#2e374d;
+}
+
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
   
   button {
     border: none;
