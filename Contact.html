@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainy Days !</title>
-    <link rel="stylesheet" href="css/confirmation.css">
+    <link rel="stylesheet" href="css/contact.css">
     <script src="https://kit.fontawesome.com/3d98670a4b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,43 +28,42 @@
     </nav>
   </header>
 
-
-
-
   <section id="boxes">
-    <div class="shopping_cart">
-        <h2>
-            You have successfully purchased 2 new jackets!
-        </h2>
+  <div class="contacth1">
+  <h1>
+      We appreciate any feedback!
+  </h1>
+</div>
+</section>
+
+
+<section id="total">
+<div class="container-contact">
+    <div class="wrap-contact">
+
+      <form name="contact" class="contact-form validate-form" method="post" action= "contact-form-handler.php">
+
+        <div class="wrap-input validate-input" data-validate="Please enter your name">
+          <input class="input" type="text" name="name" placeholder="Full Name">
+        </div>
+
+        <div class="wrap-input validate-input" data-validate = "Please enter your email">
+          <input class="input" type="text" name="email" placeholder="E-mail">
+        </div>
+
+        <div class="wrap-input validate-input" data-validate = "Please enter your message">
+          <textarea class="input" type="text" name="message" placeholder="Your Message"></textarea>
+        </div>
+
+        <div class="container-contact-form-btn">
+          <button class="contact-form-btn">
+            Send
+          </button>
+        </div>
+      </form>
     </div>
-    <section id="total">
-        <ul class="total_list">
-            <li><h1>Total sum (incl. 25% VAT)</h1></li>
-            <li><h1>40$</h1></li>
-        </ul>
-
-
-    </section>
-    <section id="card">
-      <div class="card">
-        <img src="images/jakke.jpg" alt="Winter Jacket" style="width:25%">
-        <h1 class="P1">Nike Performance</h1>
-        <h1 class="p3">Farge: black/black/white</h1>
-        <h1 class="p4">Størrelse: 116-128</h1>
-        <h1 class="p4">20$</h1>
-      </div>
-      <div class="card">
-        <img src="images/jakke.jpg" alt="Winter Jacket" style="width:25%">
-        <h1>Nike Performance</h1>
-        <h1>Farge: black/black/white</h1>
-        <h1>Størrelse: 116-128</h1>
-        <h1>20$</h1>
-      </div>
-    </section>
-    <a href="Index.html" class="btn">Home</a>
-
-
-  </section>
+  </div>
+</section>
 
 </body>
 <footer>
